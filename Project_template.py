@@ -89,7 +89,7 @@ while True:
         pygame.time.delay(2000)
         pygame.quit()
         sys.exit()
-    #Check if theif collided with jewek
+    #Check if theif collided with jewel
     if thief.rect.          (jewel):
         text = font.render("Congratulations, you won", True, (0,0,0))
         screen.blit(text, (125,175))
