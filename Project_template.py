@@ -29,7 +29,7 @@ font = pygame.font.Font("freesansbold.ttf", 16)
 
 hurdle_1 = Hurdle(0, 200, 200, 2)
 #Create a second object of the Hurdle Class at coordinates 200,198.
-hurdle_2 = Hurdle(200, 198, 200, 2)
+hurdle_2 = 
 
 hurdle_change = 1
 
