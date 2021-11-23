@@ -2,8 +2,7 @@ import pygame
 import sys
 
 class Hurdle:
-    # Insert the method name
-    def       (self, x, y, h, w):
+    def __init__(self, x, y, h, w):
         self.rect = pygame.Rect(x, y, h, w)
     
     def draw_hurdle(self, surface):
@@ -13,8 +12,7 @@ class Hurdle:
         screen.blit(image, (self.rect.x, self.rect.y-14))
 
 class Thief:
-    # Insert the method name
-    def        (self, x, y, h, w):
+    def __init__(self, x, y, h, w):
         self.rect = pygame.Rect(x, y, h, w)
     
     def draw_thief(self, surface):
@@ -28,13 +26,10 @@ screen = pygame.display.set_mode((400, 400))
 font = pygame.font.Font("freesansbold.ttf", 16)
 
 hurdle_1 = Hurdle(0, 200, 200, 2)
-#Create a second object of the Hurdle Class at coordinates 200,198.
-hurdle_2 = 
-
+hurdle_2 = Hurdle(200, 198, 200, 2)
 hurdle_change = 1
 
-#Load the hurdle image
-hurdle_img = pygame.image.load("          ")
+hurdle_img = pygame.image.load("hurdle.png")
 hurdle_img = pygame.transform.scale(hurdle_img, (200,25))
 
 thief = Thief(10, 380, 15, 15)
@@ -42,9 +37,7 @@ thief_x_change = 0
 thief_y_change = 0
 
 jewel = pygame.Rect(350, 10, 40, 40)
-
-#Load the jewel image
-jewel_image = pygame.image.load("       ")
+jewel_image = pygame.image.load("jewel.png")
 jewel_image = pygame.transform.scale(jewel_image, (50,50))
 
 while True:
@@ -89,8 +82,8 @@ while True:
         pygame.time.delay(2000)
         pygame.quit()
         sys.exit()
-    #Check if theif collided with jewel
-    if thief.rect.          (jewel):
+    
+    if thief.rect.colliderect(jewel):
         text = font.render("Congratulations, you won", True, (0,0,0))
         screen.blit(text, (125,175))
         pygame.display.update()
